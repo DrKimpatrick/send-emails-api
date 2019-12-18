@@ -1,0 +1,60 @@
+{
+    "name": "send-emails-api",
+    "version": "1.0.0",
+    "description": "This API will be used by static applications [ portfolios/Resume ] visitors to send mails the site owner. ",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "NODE_ENV=development nodemon --watch './lib/**/*.ts' --ignore './lib/**/*.spec.ts' --exec 'ts-node' ./lib/server.ts",
+        "postinstall": "npm run build-ts",
+        "build-ts": "tsc",
+        "watch-node": "nodemon ./dist/server.js",
+        "watch-ts": "tsc -w",
+        "serve": "node ./dist/server.js",
+        "start": "NODE_ENV=development nodemon ./dist/server.js",
+        "lint": "node_modules/.bin/eslint --fix  /lib/**/*.ts",
+        "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+        "heroku-postbuild": "echo This runs afterwards."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DrKimpatrick/send-emails-api.git"
+    },
+    "keywords": [
+        "send-mails",
+        "typescript",
+        "nodejs",
+        "expressjs"
+    ],
+    "author": "drkimpatrick",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DrKimpatrick/send-emails-api/issues"
+    },
+    "homepage": "https://github.com/DrKimpatrick/send-emails-api#readme",
+    "dependencies": {
+        "@hapi/joi": "^15.0.3",
+        "@sendgrid/mail": "^6.4.0",
+        "@types/cors": "^2.8.6",
+        "@types/express": "^4.17.1",
+        "@types/mongoose": "^5.5.28",
+        "@typescript-eslint/eslint-plugin": "^2.6.0",
+        "@typescript-eslint/parser": "^2.6.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "eslint": "^6.6.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.7.7",
+        "mongoose-paginate": "^5.0.3",
+        "mongoose-unique-validator": "^2.0.3",
+        "typescript": "^3.6.4",
+        "validator": "^12.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.4",
+        "ts-node": "^8.4.1"
+    },
+    "engines": {
+        "node": "11.12.0"
+    }
+}
