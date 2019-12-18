@@ -8,7 +8,7 @@ This API can be used to send emails to users
 
 ## API Spec
 
-### Endpoint `${url}/send` method: `post`
+### Endpoint `https://send-email-api.herokuapp.com/send` method: `post`
 
 ### Request
 
