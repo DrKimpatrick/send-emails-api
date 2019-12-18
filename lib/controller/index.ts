@@ -13,6 +13,11 @@ class SendMails {
                 error: 'Unable to send email, please try again',
             });
         }
+        return res.status(200).json({
+            status: 200,
+            code: 1,
+            error: 'successfully sent email',
+        });
     }
 
 }

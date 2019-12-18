@@ -18,7 +18,7 @@ class Commons {
                     data.push(obj);
                 });
 
-                return res.status(400).json({data, code: 0});
+                return res.status(400).json({data, code: 0, status: 400});
             } else {
                 next();
             }
