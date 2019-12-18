@@ -18,10 +18,12 @@ class Email {
             };
 
             SGmail.send(msg)
-                .then((sent: any) => {
+                .then((sent: any) => {  //sent.statusMessage, sent.statusCode
+                    console.log(sent, '---sent-msg---');
                     resolve(sent);
                 })
                 .catch((err: any) => {
+                    console.log(err, '--err--msg--');
                     reject(err);
                 });
         });
