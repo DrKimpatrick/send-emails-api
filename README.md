@@ -14,16 +14,13 @@ This API can be used to send emails to users
 
 The preferred JSON object to send to the API should be structured as follows:
 
-##### Note: All fields are required except fromEmail
+##### Note: All fields are required
 
-##### if fromEmail is not provided the app uses a default email = 'resumecvportfolio@gmail.com'
-
-#### You should permit less secure apps to send emails 4 the case of the fromEmail
 
 ```source-json
 {
-    "toEmail": "test@example.com", // required
-    "fromEmail": "test@example.com", // optional
+    "toEmail": "test@example.com", // required [ Your email]
+    "fromEmail": "test@example.com", // required [ visitor email]
     "name": "name of recipient ",  // required
     "subject": "subject of the email",  // required
     "body": "email body"  // required

@@ -3,16 +3,17 @@ const SGmail = require('@sendgrid/mail');
 import env from '../helper/env';
 
 class Email {
-    public newUserEmail = (toEmail: string, subject: string, body: string, name: string, fromEmail= env.FROM_EMAIL) => {
+    public newUserEmail = (toEmail: string, subject: string, body: string, name: string, fromEmail: any) => {
         return new Promise((resolve, reject) => {
             SGmail.setApiKey(env.SENDGRID_API_KEY);
 
             const msg = {
                 to: toEmail,
-                from: fromEmail,
+                from: env.FROM_EMAIL,
                 subject,
                 html: `
                     <h3>${name}</h3>
+                    <h5>${fromEmail}</h5>
                     <p>${body}</p>
                     `,
             };
